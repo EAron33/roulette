@@ -30,13 +30,14 @@ while True:
     if bevitel == 1:
         if len(fogadottszamok) > 0:
             print(f'Eddig ezekre a számokra fogadtál:')
-            if len(fogadottszamok) > 0:
-                for i, szam in enumerate(fogadottszamok):
-                    print(f"{szam} számra {tetek[i]} zseton")
+            for i, szam in enumerate(fogadottszamok):
+                print(f"{szam} számra {tetek[i]} zseton")
         fogadni = int(input("Melyik számra szeretnél fogadni? (0-36)"))
         tet = int(input("Mennyi zsetont szeretnél feltenni erre a számra?"))
         fogadottszamok.append(fogadni)
         tetek.append(tet)
+    if bevitel==2:
+        feketebet += int(input("Mennyi zsetont szeretnél feltenni?"))
     if bevitel==3:
         pirosbet += int(input("Mennyi zsetont szeretnél feltenni?"))
     if bevitel==4:
