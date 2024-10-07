@@ -1,2 +1,2 @@
 # Roulette
-Creared by Yurikohun & EAron33
+Created by Yurikohun & EAron33
