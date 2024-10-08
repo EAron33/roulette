@@ -128,15 +128,15 @@ if sorsolt in utolso18:
 else:
     bevetel -= utolso18bet
 
-if sorsolt %2 == 0:
-    bevetel +1 parosbet *2
+if sorsolt % 2 == 0:
+    bevetel += parosbet *2
 else:
     bevetel -= parosbet
 
 if sorsolt %2 == 1:
     bevetel += paratlanbet *2
 else:
-    bevetel -= parosbet
+    bevetel -= paratlanbet
 
 print(f"Az ön bevétele ebből a játékból:{bevetel} A játék 20mp után leáll")
 time.sleep(20)
