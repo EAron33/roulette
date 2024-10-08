@@ -23,9 +23,12 @@ harmadik12bet=0
 tetek= []
 fogadottszamok = []
 bevetel = 0
+parosbet = 0
+paratlanbet = 0
+
 
 while True:
-    print(f"Mire szeretnél feltenni pénz?\n1. Számra [{sum(tetek)}]\n2. Feketére [{feketebet}]\n3. Pirosra [{pirosbet}]\n4. Első oszlopra [{c1bet}]\n5. Második oszlopra [{c2bet}]\n6. Harmadik oszlopra [{c3bet}]\n7. Első tizenkettőre [{elso12bet}]\n8. Második tizenkettőre [{masodik12bet}]\n9. Harmadik tizenkettőre [{harmadik12bet}]\n10. Első félre [{elso18bet}]\n11. Második fére [{utolso18bet}]\n12. Nincs több tét")
+    print(f"Mire szeretnél feltenni pénz?\n1. Számra [{sum(tetek)}]\n2. Feketére [{feketebet}]\n3. Pirosra [{pirosbet}]\n4. Első oszlopra [{c1bet}]\n5. Második oszlopra [{c2bet}]\n6. Harmadik oszlopra [{c3bet}]\n7. Első tizenkettőre [{elso12bet}]\n8. Második tizenkettőre [{masodik12bet}]\n9. Harmadik tizenkettőre [{harmadik12bet}]\n10. Első félre [{elso18bet}]\n11. Második félre [{utolso18bet}]\n12. Párosra [{parosbet}]\n13. Páratlnra [{paratlanbet}]\n14. Nincs több tét")
     bevitel = int(input())
     if bevitel == 1:
         if len(fogadottszamok) > 0:
@@ -57,6 +60,10 @@ while True:
     if bevitel==11:
         utolso18bet += int(input("Mennyi zsetont szeretnél feltenni?"))
     if bevitel==12:
+        parosbet += int(input("Mennyi zsetont szeretnél feltenni?"))
+    if bevitel==13:
+        paratlanbet += int(input("Mennyi zsetont szeretnél feltenni?"))
+    if bevitel==14:
         break
 
 sorsolt = random.randint(0,36)
@@ -120,6 +127,16 @@ if sorsolt in utolso18:
     bevetel += utolso18bet *2
 else:
     bevetel -= utolso18bet
+
+if sorsolt %2 == 0:
+    bevetel +1 parosbet *2
+else:
+    bevetel -= parosbet
+
+if sorsolt %2 == 1:
+    bevetel += paratlanbet *2
+else:
+    bevetel -= parosbet
 
 print(f"Az ön bevétele ebből a játékból:{bevetel} A játék 20mp után leáll")
 time.sleep(20)
